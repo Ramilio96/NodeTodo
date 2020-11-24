@@ -1,0 +1,27 @@
+<h1>Todos</h1>
+
+<div id="todo">
+  <div class="row">
+    {{#if todos.length}}
+        {{#each todos}}
+    <div class="col s6 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{image}}" alt="{{name}}">
+          <span class="card-title">{{name}}</span>
+        </div>
+         <div class="card-content">
+          <p>{{description}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/todos/{{id}}/edit">Edit</a>
+          <button class="btn btm-small js-remove" data-id="{{id}}">Delete</button>
+        </div>
+      </div>
+    </div>
+        {{/each}}
+        </div>
+    {{else}}
+    <p>No todos found!</p>
+    {{/if}}
+</div>

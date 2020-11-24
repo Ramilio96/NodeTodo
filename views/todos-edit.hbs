@@ -1,0 +1,19 @@
+<h1>Редактировать {{todo.name}}</h1>
+
+<form action="/todos/edit" method="post" class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="name" name="name" type="text" placeholder="Edit name" value="{{todo.name}}">
+    </div>
+<div class="input-field col s12">
+      <input id="description" name="description" type="text" placeholder="Edit description" value="{{todo.description}}">
+    </div>
+    <div class="input-field col s12">
+      <input id="image" name="image" type="text" placeholder="Edit image" value="{{todo.image}}">
+    </div>
+
+    <input type="hidden" name="id" value="{{todo._id}}">
+    <button class="btn" type="submit">Edit</button>
+  </div>
+</form>
+

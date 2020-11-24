@@ -1,0 +1,42 @@
+  <nav class="#00897b teal darken-1">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Node App</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#if isAuth}}
+
+        {{#if isHome}}
+        <li class="active"><a href="/">Home</a></li>
+        {{else}}
+        <li><a href="/">Home</a></li>
+        {{/if}}
+
+        {{#if isAdd}}
+        <li class="active"><a href="/add">Add</a></li>
+           {{else}}
+        <li><a href="/add">Add</a></li>
+        {{/if}}
+
+          {{#if isTodos}}
+        <li class="active"><a href="/todos">Todos</a></li>
+        {{else}}
+        <li><a href="/todos">Todos</a></li>
+        {{/if}}
+
+        
+        {{#if isMail}}
+        <li class="active"><a href="/profile">Profile</a></li>
+           {{else}}
+        <li><a href="/profile">Profile</a></li>
+        {{/if}}
+<li><a href="/logout">Logout</a></li>
+        {{else}}
+
+        {{#if isLogin}}
+        <li class="active"><a href="/login">Login</a></li>
+           {{else}}
+        <li><a href="/login">Login</a></li>
+        {{/if}}
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
