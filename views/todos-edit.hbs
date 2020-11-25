@@ -11,8 +11,11 @@
     <div class="input-field col s12">
       <input id="image" name="image" type="text" placeholder="Edit image" value="{{todo.image}}">
     </div>
+    <div class="input-field col s12" style="display: none;">
+      <input id="image" name="id" type="text" placeholder="Edit id" value="{{todo.id}}">
+    </div>
 
-    <input type="hidden" name="id" value="{{todo._id}}">
+    <input type="hidden" name="id" value="{{todo.id}}">
     <button class="btn" type="submit">Edit</button>
   </div>
 </form>

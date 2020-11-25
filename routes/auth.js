@@ -5,7 +5,7 @@ const User = require("../models/user");
 
 router.get("/login", async (req, res) => {
   res.render("login", {
-    title: "Авторизация",
+    title: "Auth",
     isLogin: true,
     loginError: req.flash("loginError"),
     registerError: req.flash("registerError"),

@@ -13,7 +13,8 @@ if (todoContainer) {
         .then((res) => res.json())
         .then((todo) => {
          
-          if (todo.todos) { 
+          if (todo.todos.length) { 
+            
             const html = todo.todos
               .map((t) => {
                 return `
@@ -38,6 +39,7 @@ if (todoContainer) {
               })
               .join("");
             todoContainer.querySelector(".row").innerHTML = html;
+           
           } else {
             todoContainer.innerHTML = "<p>No todos found!</p>";
           }

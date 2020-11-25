@@ -9,15 +9,12 @@ function mapCartItems(cart) {
     name: c.name,
     description: c.description,
     image: c.image,
-    id:  c.todoID.toString(),
+    id:  c.todoID,
   }))
 }
 
 router.get("/todos", redirect, async (req, res) => {
   const user = await req.user
-    .populate('cart.items.courseId')
-    .execPopulate()
-
   const todos = mapCartItems(user.cart)
   res.render("todos", {
     title: "Todos",
@@ -35,7 +32,8 @@ router.get("/todos/:id/edit", redirect, async (req, res) => {
 });
 
 router.post("/todos/edit", redirect, async (req, res) => {
-  await Todo.findByIdAndUpdate(req.body.id, req.body);
+  await Todo.findByIdAndUpdate(req.body.id, req.body)
+  await req.user.editCart(req.body)
   res.redirect("/todos");
 });
 
