@@ -16,10 +16,12 @@ const fileMiddleware = require('./middleware/file')
 const bodyParser = require('body-parser')
 const Handlebars = require('handlebars');
 const flash = require('connect-flash');
+const compression = require('compression');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(compression())
 
 const hbs = exphbs.create({
   defaultLayout: "main",

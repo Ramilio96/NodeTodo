@@ -60,7 +60,6 @@ user.methods.editCart = function (todo) {
   clonedItems[idx] = todoClone;
 
  this.cart = { items: clonedItems}
- console.log(clonedItems[idx],clonedItems)
  return this.save();
   
 };
